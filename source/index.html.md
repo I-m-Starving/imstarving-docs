@@ -2,17 +2,8 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - magic
 
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
 
 search: true
 
@@ -20,226 +11,138 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the I'm Starving NTF
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+I’m Starving is an on-chain, story driven community experience and game on Arbitrum.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The whole concept is divided into 3 stages.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+1. The story of STAR.
+2. Cooking and questing.
+3. PvP ranked card game.
 
-# Authentication
+I’m Starving will introduce multiple types of NFTs:
 
-> To authorize, use this code:
+* ★ (STAR) – The brave hero of the Starving Story, minted only by whitelisted members of our [Discord](https://discord.gg/x83tHnF5KE).
+* SPIRIT – Our cooks and in game avatars.
+* FOODs – Collect up to 50 by questing in our game.
+* DISHes – Craft hundreds of different DISHes by cooking with SPIRITs.
 
-```ruby
-require 'kittn'
+In addition we are offering Genesis SPIRIT to investors.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+## $MAGIC
 
-```python
-import kittn
+If you are new to Treasure ecosystem, you might want to learn first about $MAGIC: [Start with Magic](https://startwithmagic.com/).
 
-api = kittn.authorize('meowmeowmeow')
-```
+# Stage 1
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+## The Mint
 
-```javascript
-const kittn = require('kittn');
+### ★
 
-let api = kittn.authorize('meowmeowmeow');
-```
+★ is our main character and the main NFT. We have a system of assigning multiple WL roles on [Discord](https://discord.gg/x83tHnF5KE) that translate to more mints.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+1 WL role = 1 ★ mint.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+To get the most out of our game, you should mint the max ★ so that you can participate in the SPIRIT crafting (more info on that in due course).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+> ![HmmStar//400x400](./images/hmm_Star.png)
 
-`Authorization: meowmeowmeow`
+Each minted ★ begins as a virgin, clean slate with no stats. That means they have no rarity and metadata is clean. You will need to stake them into the Starving Story to have any use of them.
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+In order to understand better why all ★s start as the same person, we encourage you to read our Lore.
 
-# Kittens
+### The Starving Story
 
-## Get All Kittens
+The Starving Story is where the stats and rarity will come together. The Story is a dynamic staking contract.
 
-```ruby
-require 'kittn'
+The moment a holder stakes their ★s, they become a part of the Story and start changing. All staked ★s change in tandem, at the same time and have exactly the same metadata. In order to stop those changes and freeze a ★, a holder needs to remove him from the Story (unstake).
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+The Starving Story is divided into 5 Acts, 10 Scenes each. Together there are 50 distinct Scenes (images), each one representing a different FOOD or a meal containing that FOOD.
 
-```python
-import kittn
+One Scene will take approximately 4 days.
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+★s can join the Story only during first Scenes of each Act:
 
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
+* Scene 1
+* Scene 11
+* Scene 21
+* Scene 31
+* Scene 41
 
-```javascript
-const kittn = require('kittn');
+Holders can leave the Story (unstake) at any moment.
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+### Community decides on rarity
 
-> The above command returns JSON structured like this:
+Leaving the Story, i.e. unstaking ★s freezes their metadata. Frozen ★s represent a one moment of the Starving Story. Each one will be unique, but some might have similar stats.
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
+If many holders freeze their ★s at the same time, those ★s would become common. If only one or a few holders freeze, then those ★s would be more unique and thus rarer.
 
-This endpoint retrieves all kittens.
+Only frozen ★s can take part in quests. Every holder will need to decide when is the best time to unstake.
 
-### HTTP Request
+In addition, holders of many ★s will need to consider a few things:
 
-`GET http://example.com/api/kittens`
+* do they want to have at least one ★ in each Act to take part in different quests?
+* do they want to collect a whole Act to have a chance in summoning SPIRITs?
+* do they want to time their unstakes to maximize rarity of their stats?
 
-### Query Parameters
+★s stats will have a few consequences. They will influence what prospects they have during questing and what kind of SPIRIT they can summon.
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+# Stage 2
 
-## Get a Specific Kitten
+In this stage you will start to quest and find FOODs.
+## FOODs
 
-```ruby
-require 'kittn'
+There are 50 different FOOD NFTs. You can think of them as Treasures. FOODs are divided into 5 groups, as there are 5 Acts in the Story. You can obtain FOODs through questing. There are 5 quests, one for each Act:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+1. Forage
+2. Trip,
+3. Hunt,
+4. Feast,
+5. Zen.
 
-```python
-import kittn
+★s can only quest in the Act that they are frozen in. Example:
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+* ★ is frozen on Scene 3. He can only do ******* quest (Act 1).
+* Another ★ is frozen in Scene 25. He can only do **** quest (Act 3).
 
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
+FOODs have rarities and different drop rates. Each holder will be able to influence the drop rate by holding our partner NFTs or by staking $MAGIC.
 
-```javascript
-const kittn = require('kittn');
+FOODs will be used in cooking to create DISHes, MEALs and FEASTs. Our cooks are called SPIRITs.
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
+## SPIRIT
 
-> The above command returns JSON structured like this:
+Each Act has its patron – a SPIRIT that is overwatching ★ on his journey. In addition, each SPIRIT has different forms, depending on the stats of ★s that summon it. That makes 5 different SPIRITs and each of them has 2 different forms.
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
+In order to summon a SPIRIT, the player needs to hold 10 ★s. Each ★ needs to be frozen in a different Scene from the Act. That means they need to hold ★s that show all 10 Scenes of the Act. ★s that are used to summon a SPIRIT die (tokens are burned). Stats of burned ★s determine stats of the SPIRIT.
 
-This endpoint retrieves a specific kitten.
+## DISH, MEAL, FEAST
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+Each FOOD can be used in cooking. Each SPIRIT type will have its own skill tree that uses FOOD from its Act and, after learning new skills, FOODs from other Acts and Treasures.
 
-### HTTP Request
+> ![Dish](./images/dish.jpg)
 
-`GET http://example.com/kittens/<ID>`
+All NFTs used in cooking will be burned in exchange for the new DISH, MEAL or whole FEAST. Treasures used in cooking will also be burned.
 
-### URL Parameters
+We plan to use most of T5 Treasures, a few T4 and at least one T3.
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+> ![cow](/img/cow.png)
 
-## Delete a Specific Kitten
+The skill tree is developed individually for each SPIRIT type. It will need to learn basic skills first before it can start making more complicated recipes.
 
-```ruby
-require 'kittn'
+# Stage 3
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
+## PvP ranked card game
 
-```python
-import kittn
+Soon.
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
+# Socials
 
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
+## Discord
+We will publish mint details and more info on our [Discord](https://discord.gg/x83tHnF5KE).
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+## Twitter
