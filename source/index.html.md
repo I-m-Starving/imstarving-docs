@@ -130,7 +130,7 @@ All NFTs used in cooking will be burned in exchange for the new DISH, MEAL or wh
 
 We plan to use most of T5 Treasures, a few T4 and at least one T3.
 
-> ![cow](/img/cow.png)
+> ![cow](./images/cow.png)
 
 The skill tree is developed individually for each SPIRIT type. It will need to learn basic skills first before it can start making more complicated recipes.
 
