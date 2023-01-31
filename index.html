@@ -1,0 +1,498 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the I'm Starving NTF"
+        >
+    <title>API Reference</title>
+    <link href="images/favicon-51cc1e23.ico" rel="icon" type="image/ico" />
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-99799d8d.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-e4d8cdbd.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;magic&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-d63dcde6.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="magic">magic</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#magic" class="toc-h2 toc-link" data-title="$MAGIC">$MAGIC</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stage-1" class="toc-h1 toc-link" data-title="Stage 1">Stage 1</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-mint" class="toc-h2 toc-link" data-title="The Mint">The Mint</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stage-2" class="toc-h1 toc-link" data-title="Stage 2">Stage 2</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#foods" class="toc-h2 toc-link" data-title="FOODs">FOODs</a>
+                  </li>
+                  <li>
+                    <a href="#spirit" class="toc-h2 toc-link" data-title="SPIRIT">SPIRIT</a>
+                  </li>
+                  <li>
+                    <a href="#dish-meal-feast" class="toc-h2 toc-link" data-title="DISH, MEAL, FEAST">DISH, MEAL, FEAST</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stage-3" class="toc-h1 toc-link" data-title="Stage 3">Stage 3</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#pvp-ranked-card-game" class="toc-h2 toc-link" data-title="PvP ranked card game">PvP ranked card game</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#socials" class="toc-h1 toc-link" data-title="Socials">Socials</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#discord" class="toc-h2 toc-link" data-title="Discord">Discord</a>
+                  </li>
+                  <li>
+                    <a href="#twitter" class="toc-h2 toc-link" data-title="Twitter">Twitter</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>I’m Starving is an on-chain, story driven community experience and game on Arbitrum.</p>
+
+<p>The whole concept is divided into 3 stages.</p>
+
+<ol>
+<li>The story of STAR.</li>
+<li>Cooking and questing.</li>
+<li>PvP ranked card game.</li>
+</ol>
+
+<p>I’m Starving will introduce multiple types of NFTs:</p>
+
+<ul>
+<li>★ (STAR) – The brave hero of the Starving Story, minted only by whitelisted members of our <a href="https://discord.gg/x83tHnF5KE">Discord</a>.</li>
+<li>SPIRIT – Our cooks and in game avatars.</li>
+<li>FOODs – Collect up to 50 by questing in our game.</li>
+<li>DISHes – Craft hundreds of different DISHes by cooking with SPIRITs.</li>
+</ul>
+
+<p>In addition we are offering Genesis SPIRIT to investors.</p>
+<h2 id='magic'>$MAGIC</h2>
+<p>If you are new to Treasure ecosystem, you might want to learn first about $MAGIC: <a href="https://startwithmagic.com/">Start with Magic</a>.</p>
+<h1 id='stage-1'>Stage 1</h1><h2 id='the-mint'>The Mint</h2><h3 id='43ca686a78'>★</h3>
+<p>★ is our main character and the main NFT. We have a system of assigning multiple WL roles on <a href="https://discord.gg/x83tHnF5KE">Discord</a> that translate to more mints.</p>
+
+<p>1 WL role = 1 ★ mint.</p>
+
+<p>To get the most out of our game, you should mint the max ★ so that you can participate in the SPIRIT crafting (more info on that in due course).</p>
+
+<blockquote>
+<p><img src="images/hmm_Star-dd6e0405.png" alt="HmmStar//400x400" /></p>
+</blockquote>
+
+<p>Each minted ★ begins as a virgin, clean slate with no stats. That means they have no rarity and metadata is clean. You will need to stake them into the Starving Story to have any use of them.</p>
+
+<p>In order to understand better why all ★s start as the same person, we encourage you to read our Lore.</p>
+<h3 id='the-starving-story'>The Starving Story</h3>
+<p>The Starving Story is where the stats and rarity will come together. The Story is a dynamic staking contract.</p>
+
+<p>The moment a holder stakes their ★s, they become a part of the Story and start changing. All staked ★s change in tandem, at the same time and have exactly the same metadata. In order to stop those changes and freeze a ★, a holder needs to remove him from the Story (unstake).</p>
+
+<p>The Starving Story is divided into 5 Acts, 10 Scenes each. Together there are 50 distinct Scenes (images), each one representing a different FOOD or a meal containing that FOOD.</p>
+
+<p>One Scene will take approximately 4 days.</p>
+
+<p>★s can join the Story only during first Scenes of each Act:</p>
+
+<ul>
+<li>Scene 1</li>
+<li>Scene 11</li>
+<li>Scene 21</li>
+<li>Scene 31</li>
+<li>Scene 41</li>
+</ul>
+
+<p>Holders can leave the Story (unstake) at any moment.</p>
+<h3 id='community-decides-on-rarity'>Community decides on rarity</h3>
+<p>Leaving the Story, i.e. unstaking ★s freezes their metadata. Frozen ★s represent a one moment of the Starving Story. Each one will be unique, but some might have similar stats.</p>
+
+<p>If many holders freeze their ★s at the same time, those ★s would become common. If only one or a few holders freeze, then those ★s would be more unique and thus rarer.</p>
+
+<p>Only frozen ★s can take part in quests. Every holder will need to decide when is the best time to unstake.</p>
+
+<p>In addition, holders of many ★s will need to consider a few things:</p>
+
+<ul>
+<li>do they want to have at least one ★ in each Act to take part in different quests?</li>
+<li>do they want to collect a whole Act to have a chance in summoning SPIRITs?</li>
+<li>do they want to time their unstakes to maximize rarity of their stats?</li>
+</ul>
+
+<p>★s stats will have a few consequences. They will influence what prospects they have during questing and what kind of SPIRIT they can summon.</p>
+<h1 id='stage-2'>Stage 2</h1>
+<p>In this stage you will start to quest and find FOODs.</p>
+<h2 id='foods'>FOODs</h2>
+<p>There are 50 different FOOD NFTs. You can think of them as Treasures. FOODs are divided into 5 groups, as there are 5 Acts in the Story. You can obtain FOODs through questing. There are 5 quests, one for each Act:</p>
+
+<ol>
+<li>Forage</li>
+<li>Trip,</li>
+<li>Hunt,</li>
+<li>Feast,</li>
+<li>Zen.</li>
+</ol>
+
+<p>★s can only quest in the Act that they are frozen in. Example:</p>
+
+<ul>
+<li>★ is frozen on Scene 3. He can only do ******* quest (Act 1).</li>
+<li>Another ★ is frozen in Scene 25. He can only do **** quest (Act 3).</li>
+</ul>
+
+<p>FOODs have rarities and different drop rates. Each holder will be able to influence the drop rate by holding our partner NFTs or by staking $MAGIC.</p>
+
+<p>FOODs will be used in cooking to create DISHes, MEALs and FEASTs. Our cooks are called SPIRITs.</p>
+<h2 id='spirit'>SPIRIT</h2>
+<p>Each Act has its patron – a SPIRIT that is overwatching ★ on his journey. In addition, each SPIRIT has different forms, depending on the stats of ★s that summon it. That makes 5 different SPIRITs and each of them has 2 different forms.</p>
+
+<p>In order to summon a SPIRIT, the player needs to hold 10 ★s. Each ★ needs to be frozen in a different Scene from the Act. That means they need to hold ★s that show all 10 Scenes of the Act. ★s that are used to summon a SPIRIT die (tokens are burned). Stats of burned ★s determine stats of the SPIRIT.</p>
+<h2 id='dish-meal-feast'>DISH, MEAL, FEAST</h2>
+<p>Each FOOD can be used in cooking. Each SPIRIT type will have its own skill tree that uses FOOD from its Act and, after learning new skills, FOODs from other Acts and Treasures.</p>
+
+<blockquote>
+<p><img src="images/dish-e6a7fb7b.jpg" alt="Dish" /></p>
+</blockquote>
+
+<p>All NFTs used in cooking will be burned in exchange for the new DISH, MEAL or whole FEAST. Treasures used in cooking will also be burned.</p>
+
+<p>We plan to use most of T5 Treasures, a few T4 and at least one T3.</p>
+
+<blockquote>
+<p><img src="images/cow-2d275797.png" alt="cow" /></p>
+</blockquote>
+
+<p>The skill tree is developed individually for each SPIRIT type. It will need to learn basic skills first before it can start making more complicated recipes.</p>
+<h1 id='stage-3'>Stage 3</h1><h2 id='pvp-ranked-card-game'>PvP ranked card game</h2>
+<p>Soon.</p>
+<h1 id='socials'>Socials</h1><h2 id='discord'>Discord</h2>
+<p>We will publish mint details and more info on our <a href="https://discord.gg/x83tHnF5KE">Discord</a>.</p>
+<h2 id='twitter'>Twitter</h2>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="magic">magic</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
