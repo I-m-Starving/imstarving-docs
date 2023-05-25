@@ -142,7 +142,4 @@ Soon.
 
 # Socials
 
-## Discord
-We will publish mint details and more info on our [Discord](https://discord.gg/x83tHnF5KE).
-
-## Twitter
+[Discord](https://discord.gg/x83tHnF5KE) | [Twitter](https://twitter.com/ImStarvingNFT)
